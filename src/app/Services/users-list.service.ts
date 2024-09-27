@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { UserList } from '../Model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,11 @@ export class UsersListService {
     }))
 
   }
+   addUser(user:UserList):Observable<any>{
+  return this.usersHttp.post(this.usersUrl,user)
 
+
+}
 
   deleteUser(userId:number):Observable<any>{
     return this.usersHttp.delete(`${this.usersUrl}/${userId}`)

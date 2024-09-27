@@ -14,7 +14,7 @@ import { Router, RouterLink } from '@angular/router';
 export class UserListComponent implements OnInit {
 
 userList:UserList[]=[]
-users:any[]=[]
+
   userService=inject(UsersListService);
   router=inject(Router)
 
@@ -32,9 +32,9 @@ this.router.navigate(['user',user.id])
 onDeleteUser(userId:number){
   // if(confirm("sure want to delete")){
 this.userService.deleteUser(userId).subscribe(()=>{
-  this.users=this.users.filter((user:any)=>{
+  this.userList=this.userList.filter((user:any)=>{
     console.log(user);
-    user.id!==userId
+   return user.id!==userId
     
   })
  

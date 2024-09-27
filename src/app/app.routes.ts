@@ -10,6 +10,8 @@ import { MenDataComponent } from './layouts/catagories/men-data/men-data.compone
 import { ElectronicsComponent } from './layouts/catagories/electronics/electronics.component';
 import { UserListComponent } from './layouts/user-list/user-list.component';
 import { SingleUserComponent } from './layouts/single-user/single-user.component';
+import { SignupComponent } from './Components/signup/signup.component';
+import { AddUserComponent } from './layouts/add-user/add-user.component';
 
 
 export const routes: Routes = [{
@@ -21,6 +23,7 @@ export const routes: Routes = [{
     path:'login',
     component:LoginComponent
 },
+{    path:'resister',component:SignupComponent},
  {
     path:'',
     component:ProductsComponent,
@@ -47,6 +50,11 @@ export const routes: Routes = [{
 {
    path:'user/:id',
    component:SingleUserComponent
+
+},
+{
+  path:'userss/new-user',
+  component:AddUserComponent
 
 },
 {

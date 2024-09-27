@@ -67,19 +67,21 @@ decreseCartQuantity(item:any){
   this.cartItems=this.cartItems.map((ele)=>{
 
 
-if(ele.quantity===0){
-   this.removeItemCart(item.id)
-}
-   else if(ele.id===item.id){
+
+  if(ele.id===item.id){
       ele.quantity--
       console.log(ele)
     }
+    if(ele.quantity===0){
+      this.removeItemCart(item.id)
+      return null
+   }
     
 
 
 
     return ele
-  })
+  }).filter(ele=>ele!==null)
  this.updateCartTotals()
  
 }
@@ -90,11 +92,7 @@ increaseProductQuanty(item:any){
     if(ele.id===item.id){
       ele.quantity++
     }
-    else if(ele.id===item.id && ele.quantity<=1){
-      let val=this.cartItems.indexOf(item)
-      this.cartItems.splice(val,1)
-
-    }
+    
     return ele
   })
   this.updateCartTotals()

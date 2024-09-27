@@ -1,12 +1,12 @@
 import { Component, inject, viewChild } from '@angular/core';
 import { AuthLoginService } from '../../Services/auth-login.service';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

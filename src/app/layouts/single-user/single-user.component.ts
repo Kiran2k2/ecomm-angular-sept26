@@ -23,7 +23,7 @@ ngOnInit(): void {
  const userId=this.route.snapshot.paramMap.get('id');
  this.httpC.get<any>(`https://fakestoreapi.com/users/${userId}`).subscribe(res=>{
   console.log(res);
-   this.user=res
+    this.user=res
  })
 
 
